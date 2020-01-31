@@ -4,9 +4,9 @@ use_synth :piano
 intro ="C:/Users/abigail_wells/Documents/Audacity/BTS speech at the United Nations UNICEF.wav"
 vocals ="C:/Users/abigail_wells/Documents/Audacity/BTS.wav"
 ending = "C:/Users/abigail_wells/Documents/Audacity/i_need_u.wav"
-=begin
-#sample intro
-#sleep 50
+
+sample intro
+sleep 50
 live_loop :low do
   4.times do
     play :C5, sustain: 3
@@ -25,7 +25,7 @@ live_loop :low do
   stop
 end
 sleep 16
-=end
+
 live_loop :hi do
   3.times do
     sleep 2
