@@ -4,23 +4,35 @@ use_synth :piano
 intro ="C:/Users/abigail_wells/Documents/Audacity/BTS speech at the United Nations UNICEF.wav"
 vocals ="C:/Users/abigail_wells/Documents/Audacity/BTS.wav"
 ending = "C:/Users/abigail_wells/Documents/Audacity/i_need_u.wav"
-
-sample intro
+n = [:C5, :Ab4, :F4]
+n2 = [:G4,:Eb4, :Bb4]
+n3 = [:Ab4,:F4, :Db4]
+a=0
+sample intro, amp: 2
 sleep 50
 live_loop :low do
   4.times do
-    play :C5, sustain: 3
-    play :Ab4, sustain: 3
-    play :F4, sustain:  3
+    play n[a], sustain: 3
+    a=a+1
+    play n[a], sustain: 3
+    a=a+1
+    play n[a], sustain: 3
     sleep 4
-    play :G4, sustain:  3
-    play :Eb4, sustain:  3
-    play :Bb4, sustain:  3
+    a=0
+    play n2[a], sustain:  3
+    a=a+1
+    play n2[a], sustain:  3
+    a=a+1
+    play n2[a], sustain:  3
     sleep 4
-    play :Ab4, sustain: 5
-    play :F4, sustain:  5
-    play :Db4, sustain: 5
+    a=0
+    play n3[a], sustain: 5
+    a=a+1
+    play n3[a], sustain: 5
+    a=a+1
+    play n3[a], sustain: 5
     sleep 8
+    a=0
   end
   stop
 end
@@ -127,7 +139,7 @@ live_loop :vocals do
   sleep 32
   stop
 end
-sleep 59.025
+sleep 59.02
 live_loop :ending do
   sample ending, release: 0.5, amp: 0.5
   sleep 3
